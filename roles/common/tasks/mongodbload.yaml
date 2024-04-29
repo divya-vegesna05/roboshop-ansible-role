@@ -20,8 +20,8 @@
     msg: "user is {{user_count}}"
 - name: Load Products Schema
   ansible.builtin.shell: mongo --host mongodb.jasritha.tech < /app/schema/{{component}}.js
-    when: products_count.stdout == "0" and component == "catalogue"
+  when: products_count.stdout == "0" and component == "catalogue"
 - name: Load users Schema
   ansible.builtin.shell: mongo --host mongodb.jasritha.tech < /app/schema/{{component}}.js
-    when: user_count.stdout == "0" and component == "user"
+  when: user_count.stdout == "0" and component == "user"
 
