@@ -3,9 +3,7 @@
     name: golang
     state: present
 - name: Install dependencies
-  ansible.builtin.package:
-    name: "{{item}}"
-    state: present
+  ansible.builtin.command: "{{item}}"
   loop:
   - go mod init dispatch
   - go get
