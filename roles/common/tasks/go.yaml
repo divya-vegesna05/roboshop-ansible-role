@@ -7,6 +7,6 @@
     name: "{{item}}"
     state: present
   loop:
-  - go mod init dispatch
-  - go get 
-  - go build
+  - "go mod init dispatch"
+  - "go get" 
+  - "go build"
