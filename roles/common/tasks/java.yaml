@@ -7,7 +7,7 @@
   args:
       chdir: /app
 - name: move shipping jar file
-  ansible.builtin.command: mv target/shipping-{{VERSION}}.jar shipping.jar
+  ansible.builtin.shell: mv target/{{component}}-{{VERSION}}.jar {{component}}.jar
   args:
     chdir: /app
 
