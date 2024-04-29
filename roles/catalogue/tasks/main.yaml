@@ -14,3 +14,8 @@
   ansible.builtin.include_role:
     name: common
     tasks_from: systemdaemon
+- name: deployment
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: deployment
+
