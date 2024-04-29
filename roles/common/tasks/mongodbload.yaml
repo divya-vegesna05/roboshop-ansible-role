@@ -7,10 +7,10 @@
     name: mongodb-org-shell
     state: present
 - name: get products
-  ansible.builtin.shell:  mongo --host mongodb.jasritha.tech --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
+  ansible.builtin.shell:  mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
   register: products_count
 - name: get users
-  ansible.builtin.shell:  mongo --host mongodb.jasritha.tech --quiet --eval 'db = db.getSiblingDB("users"); db.user.count()'
+  ansible.builtin.shell:  mongo --host {{MONGODB_HOST}} --quiet --eval 'db = db.getSiblingDB("users"); db.user.count()'
   register: user_count
 - name: load catalogue data
   ansible.builtin.debug:
@@ -19,9 +19,9 @@
   ansible.builtin.debug:
     msg: "user is {{user_count}}"
 - name: Load Products Schema
-  ansible.builtin.shell: mongo --host mongodb.jasritha.tech < /app/schema/{{component}}.js
+  ansible.builtin.shell: mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js
   when: products_count.stdout == "0" and component == "catalogue"
 - name: Load users Schema
-  ansible.builtin.shell: mongo --host mongodb.jasritha.tech < /app/schema/{{component}}.js
+  ansible.builtin.shell: mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js
   when: user_count.stdout == "0" and component == "user"
 
