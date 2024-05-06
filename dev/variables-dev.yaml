@@ -1,0 +1,9 @@
+MONGODB_HOST: mongodb-dev.jasritha.tech
+REDIS_HOST: redis-dev.jasritha.tech
+CATALOGUE_HOST: catalogue-dev.jasritha.tech
+USER_HOST: user-dev.jasritha.tech
+CART_HOST: cart-dev.jasritha.tech
+SHIPPING_HOST: shipping-dev.jasritha.tech
+PAYMENT_HOST: payment-dev.jasritha.tech
+MYSQL_HOST: mysql-dev.jasritha.tech
+RABBITMQ_HOST: rabbitmq-dev.jasritha.tech
