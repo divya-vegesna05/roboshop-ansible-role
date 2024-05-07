@@ -1,4 +1,4 @@
-- name: "Install {{component}}"
+- name: "install {{component}}"
   hosts: localhost
   connection: local
   vars_files:
