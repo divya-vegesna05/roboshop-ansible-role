@@ -11,14 +11,12 @@
       name: rabbitmq-server 
       state: started
       enabled: true
-- name: |-
-    Add user to server and assign full access control on / vhost.
-    The user might have permission rules for other vhost but you don't care.
-  community.rabbitmq.rabbitmq_user:
-    user: "{{ lookup('aws_ssm', '/roboshop/{{env}}/rabbitmq-user', region='us-east-1', decrypt=True ) }}"
-    password: "{{ lookup('aws_ssm', '/roboshop/{{env}}/rabbitmq-password', region='us-east-1', decrypt=True ) }}"
-    vhost: /
-    configure_priv: .*
-    read_priv: .*
-    write_priv: .*
-    state: present
+  - name: Add user to server and assign full access control on / vhost.
+    community.rabbitmq.rabbitmq_user:
+      user: "{{ lookup('aws_ssm', '/roboshop/{{env}}/rabbitmq-user', region='us-east-1', decrypt=True ) }}"
+      password: "{{ lookup('aws_ssm', '/roboshop/{{env}}/rabbitmq-password', region='us-east-1', decrypt=True ) }}"
+      vhost: /
+      configure_priv: .*
+      read_priv: .*
+      write_priv: .*
+      state: present
