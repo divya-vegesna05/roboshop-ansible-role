@@ -1,5 +1,5 @@
 MONGODB_HOST: mongodb-dev.jasritha.tech
-REDIS_HOST: redis-dev.jasritha.tech
+REDIS_HOST: redis.jasritha.tech
 CATALOGUE_HOST: catalogue.app-dev.jasritha.tech
 USER_HOST: user.app-dev.jasritha.tech
 CART_HOST: cart.app-dev.jasritha.tech
